@@ -7,13 +7,11 @@ public class LinkTest extends BaseTest {
     public void testLinkIsWorking() {
         LinkPage linkPage = new LinkPage(driver);
 
-        // Получаем URL ссылки и переходим по ней
         String url = linkPage.getMoreInfoLinkUrl();
         assert url != null;
         driver.navigate().to(url);
         System.out.println("Navigated to: " + url);
 
-        // Проверяем, что страница загрузилась с ожидаемым заголовком
         String expectedTitle = "Порядок оплаты и безопасность интернет платежей";
         String actualTitle = driver.getTitle();
         System.out.println("Page title: " + actualTitle);
